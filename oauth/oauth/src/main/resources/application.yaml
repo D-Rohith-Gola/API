@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: 'oauth2'
+  security:
+    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: https://accounts.google.com
+#          audiences: '834379746436-94sei91a8p87d3h1lu5qtltf395qjshf.apps.googleusercontent.com'
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - 'email'
+              - 'profile'
+server:
+  port: 13000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka

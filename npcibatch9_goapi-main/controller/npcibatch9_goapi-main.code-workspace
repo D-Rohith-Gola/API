@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../fiber-api-consumer"
+		}
+	],
+	"settings": {}
+}

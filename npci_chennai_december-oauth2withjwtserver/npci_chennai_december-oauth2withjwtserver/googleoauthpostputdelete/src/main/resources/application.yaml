@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: oauthpostputdelete
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+server:
+   port: 8086
