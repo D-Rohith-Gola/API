@@ -2,8 +2,13 @@ package com.upiafternoon.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement(name = "account")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Account {
 	private String name;
 	private String accountType;

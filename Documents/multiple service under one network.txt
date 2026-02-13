@@ -1,0 +1,25 @@
+docker network create spring-mysql-network
+
+docker run --name mysql-container \
+  --network spring-mysql-network \
+  -e MYSQL_ROOT_PASSWORD=rootpassword \
+  -e MYSQL_DATABASE=mydatabase \
+  -p 3306:3306 \
+  -d mysql:latest
+
+
+docker build -t my-producer .
+
+docker run --name producer-container \
+  --network spring-mysql-network \
+  -p 9090:9090 \
+  -d my-producer
+
+
+docker build -t my-consumer .
+
+docker run --name producer-container \
+  --network spring-mysql-network \
+  -p 10000:10000 \
+  -d my-consumer
+ 

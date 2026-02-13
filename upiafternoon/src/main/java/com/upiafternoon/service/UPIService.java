@@ -1,5 +1,7 @@
 package com.upiafternoon.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +40,11 @@ public class UPIService implements UPIServiceInterface {
 	public String deleteAccountService(String email) {
 		uDao.deleteById(email);
 		return "account deleted successfully";
+	}
+
+	@Override
+	public List<Account> getAllAccount() {
+		return uDao.findAll();
 	}
 
 }
